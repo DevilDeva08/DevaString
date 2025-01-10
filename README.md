@@ -38,7 +38,7 @@
 
 ### 🙄 ᴅᴇᴍᴏ/ᴛᴇsᴛ ʙᴏᴛ
   
-  [sᴛʀɪɴɢ ʙᴏᴛ 🍑](https://telegram.me/BRANDEDSTRINGSESSION_BOT)
+  [sᴛʀɪɴɢ ʙᴏᴛ 🍑](http://t.me/NISHUSTRING_BOT)
 
 ```
 Atleast Give A Star and Fork The Repo 🖤
