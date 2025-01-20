@@ -3,7 +3,7 @@
   <img src="https://te.legra.ph/file/90e709718e7dac641aaf7.jpg" alt="StringGen">
 </p>
 ## ʀᴇᴘᴏ sᴛᴀᴛs
-<a href="https://github.com/WCGKING/StringGenBot"><img src="https://github-readme-stats.vercel.app/api/pin/?username=WCGKING&repo=StringGenBot&theme=chartreuse-dark"></a>
+<a href="None"><img src="https://github-readme-stats.vercel.app/api/pin/?username=WCGKING&repo=StringGenBot&theme=chartreuse-dark"></a>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
