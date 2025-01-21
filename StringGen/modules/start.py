@@ -1,15 +1,33 @@
-from pyrogram import filters
-from pyrogram.types import Message
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
-from StringGen import Anony
-from StringGen.utils import add_served_user, keyboard
+from config import OWNER_ID
 
+# Renaming the filter function to avoid conflict with built-in names
+def command_filter(cmd: str):
+    return filters.private & filters.incoming & filters.command(cmd)
 
-@Anony.on_message(filters.command("start") & filters.private & filters.incoming)
-async def f_start(_, message: Message):
-    await message.reply_text(
-        text=f"ʜᴇʏ {message.from_user.first_name},\n\n๏ ᴛʜɪs ɪs {Anony.mention},\nAɴ ᴏᴘᴇɴ sᴏᴜʀᴄᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ, ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ ᴛʜᴇ ʜᴇʟᴩ ᴏғ ᴩʏʀᴏɢʀᴀᴍ.",
-        reply_markup=keyboard,
+@Client.on_message(command_filter("start"))
+async def start(bot: Client, msg: Message):
+    me = (await bot.get_me()).mention  # Changed variable name to avoid shadowing built-in function name 'me'
+    await msg.reply_text(
+        text=f"""ʜᴇʏ {msg.from_user.mention},
+
+ᴛʜɪs ɪs {me},
+ɪ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴀʟʟ ᴛʏᴘᴇ ᴏғ sᴇssɪᴏɴs..
+ᴄʟɪᴄᴋ ᴏɴ ɢᴇɴᴇʀᴀᴛᴇ sᴇssɪᴏɴ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ!
+
+ᴍᴀᴅᴇ ʙʏ: [DEV](https://t.me/BTW_CHALCOGEN) !""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(text="𖤍 ɢᴇɴᴇʀᴀᴛᴇ sᴇssɪᴏɴ 𖤍", callback_data="generate")
+                ],
+                [
+                    InlineKeyboardButton("ꨄ︎ sᴜᴘᴘᴏʀᴛ ꨄ︎", url="https://t.me/ITZ_SOULMATES"),
+                    InlineKeyboardButton("ఌ︎ ᴄʜᴀɴɴᴇʟ ఌ︎", url="https://t.me/SPARKLE_SOCIETY")
+                ]
+            ]
+        ),
         disable_web_page_preview=True,
     )
-    await add_served_user(message.from_user.id)
